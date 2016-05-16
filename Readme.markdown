@@ -41,4 +41,4 @@ This will write to all caches in parallel. When accessing the multi cache, it wi
 
 ## Thanks
 
-Thanks to [Caleb Davenport](https://twitter.com/calebd) for unintentioanlly inspiring this and lots of help along the way.
+Thanks to [Caleb Davenport](https://twitter.com/calebd) for unintentionally inspiring this and lots of help along the way.
