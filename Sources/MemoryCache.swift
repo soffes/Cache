@@ -64,4 +64,21 @@ public final class MemoryCache<T>: Cache {
 		cache.removeAllObjects()
 		completion?()
 	}
+	
+	
+	// MARK: - Synchronous
+	
+	public subscript(key: String) -> T? {
+		get {
+			return (cache.objectForKey(key) as? Box<T>)?.value
+		}
+		
+		set(newValue) {
+			if let newValue = newValue {
+				cache.setObject(Box(newValue), forKey: key)
+			} else {
+				cache.removeObjectForKey(key)
+			}
+		}
+	}
 }
