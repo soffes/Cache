@@ -6,7 +6,7 @@
 //  Copyright © 2016 Sam Soffes. All rights reserved.
 //
 
-protocol Cache {
+public protocol Cache {
 	associatedtype Element
 
 	func get(key key: String, completion: (Element? -> Void))

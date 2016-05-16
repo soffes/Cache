@@ -10,7 +10,7 @@ import Foundation
 
 /// Disk cache. All reads run concurrently. Writes wait for all other queue actions to finish and run one at a time
 /// using dispatch barriers.
-struct DiskCache<T: NSCoding>: Cache {
+public struct DiskCache<T: NSCoding>: Cache {
 
 	// MARK: - Properties
 
@@ -21,7 +21,7 @@ struct DiskCache<T: NSCoding>: Cache {
 
 	// MARK: - Initializers
 
-	init?(directory: String) {
+	public init?(directory: String) {
 		var isDirectory: ObjCBool = false
 		// Ensure the directory exists
 		if fileManager.fileExistsAtPath(directory, isDirectory: &isDirectory) && isDirectory {
@@ -41,7 +41,7 @@ struct DiskCache<T: NSCoding>: Cache {
 
 	// MARK: - Cache
 
-	func get(key key: String, completion: (T? -> Void)) {
+	public func get(key key: String, completion: (T? -> Void)) {
 		let path = pathForKey(key)
 
 		coordinate {
@@ -50,7 +50,7 @@ struct DiskCache<T: NSCoding>: Cache {
 		}
 	}
 
-	func set(key key: String, value: T, completion: (() -> Void)?) {
+	public func set(key key: String, value: T, completion: (() -> Void)? = nil) {
 		let path = pathForKey(key)
 		let fileManager = self.fileManager
 
@@ -65,7 +65,7 @@ struct DiskCache<T: NSCoding>: Cache {
 		}
 	}
 
-	func remove(key key: String, completion: (() -> Void)?) {
+	public func remove(key key: String, completion: (() -> Void)? = nil) {
 		let path = pathForKey(key)
 		let fileManager = self.fileManager
 
@@ -78,7 +78,7 @@ struct DiskCache<T: NSCoding>: Cache {
 		}
 	}
 
-	func removeAll(completion completion: (() -> Void)?) {
+	public func removeAll(completion completion: (() -> Void)? = nil) {
 		let fileManager = self.fileManager
 		let directory = self.directory
 

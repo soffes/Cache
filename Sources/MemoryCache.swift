@@ -6,9 +6,13 @@
 //  Copyright © 2016 Sam Soffes. All rights reserved.
 //
 
-import UIKit
+#if os(iOS) || os(tvOS)
+	import UIKit
+#else
+	import Foundation
+#endif
 
-final class MemoryCache<T>: Cache {
+public final class MemoryCache<T>: Cache {
 
 	// MARK: - Properties
 
@@ -17,40 +21,46 @@ final class MemoryCache<T>: Cache {
 
 	// MARK: - Initializers
 
-	init(countLimit: Int? = nil, automaticallyRemoveAllObjects: Bool = false) {
-		cache.countLimit = countLimit ?? 0
+	#if os(iOS) || os(tvOS)
+		public init(countLimit: Int? = nil, automaticallyRemoveAllObjects: Bool = false) {
+			cache.countLimit = countLimit ?? 0
 
-		if automaticallyRemoveAllObjects {
-			let notificationCenter = NSNotificationCenter.defaultCenter()
-			notificationCenter.addObserver(cache, selector: #selector(NSCache.removeAllObjects), name: UIApplicationDidEnterBackgroundNotification, object: nil)
-			notificationCenter.addObserver(cache, selector: #selector(NSCache.removeAllObjects), name: UIApplicationDidReceiveMemoryWarningNotification, object: nil)
+			if automaticallyRemoveAllObjects {
+				let notificationCenter = NSNotificationCenter.defaultCenter()
+				notificationCenter.addObserver(cache, selector: #selector(NSCache.removeAllObjects), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+				notificationCenter.addObserver(cache, selector: #selector(NSCache.removeAllObjects), name: UIApplicationDidReceiveMemoryWarningNotification, object: nil)
+			}
 		}
-	}
 
-	deinit {
-		NSNotificationCenter.defaultCenter().removeObserver(cache)
-	}
+		deinit {
+			NSNotificationCenter.defaultCenter().removeObserver(cache)
+		}
+	#else
+		public init(countLimit: Int? = nil) {
+			cache.countLimit = countLimit ?? 0
+		}
+	#endif
 
 
 	// MARK: - Cache
 
-	func set(key key: String, value: T, completion: (() -> Void)?) {
+	public func set(key key: String, value: T, completion: (() -> Void)? = nil) {
 		cache.setObject(Box(value), forKey: key)
 		completion?()
 	}
 
-	func get(key key: String, completion: (T? -> Void)) {
+	public func get(key key: String, completion: (T? -> Void)) {
 		let box = cache.objectForKey(key) as? Box<T>
 		let value = box.flatMap({ $0.value })
 		completion(value)
 	}
 
-	func remove(key key: String, completion: (() -> Void)?) {
+	public func remove(key key: String, completion: (() -> Void)? = nil) {
 		cache.removeObjectForKey(key)
 		completion?()
 	}
 
-	func removeAll(completion completion: (() -> Void)?) {
+	public func removeAll(completion completion: (() -> Void)? = nil) {
 		cache.removeAllObjects()
 		completion?()
 	}

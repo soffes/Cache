@@ -10,29 +10,29 @@ import libkern
 
 /// Reads from the first cache available. Writes to all caches in order. If there is a cache miss and the value is later
 /// found in a subsequent cache, it is written to all previous caches.
-struct MultiCache<T>: Cache {
+public struct MultiCache<T>: Cache {
 
 	// MARK: - Properties
 
-	let caches: [AnyCache<T>]
+	public let caches: [AnyCache<T>]
 
 
 	// MARK: - Initializers
 
-	init(caches: [AnyCache<T>]) {
+	public init(caches: [AnyCache<T>]) {
 		self.caches = caches
 	}
 
 
 	// MARK: - Cache
 
-	func set(key key: String, value: T, completion: (() -> Void)?) {
+	public func set(key key: String, value: T, completion: (() -> Void)? = nil) {
 		coordinate(block: { cache, finish in
 			cache.set(key: key, value: value, completion: finish)
 		}, completion: completion)
 	}
 
-	func get(key key: String, completion: (T? -> Void)) {
+	public func get(key key: String, completion: (T? -> Void)) {
 		var misses = [AnyCache<T>]()
 
 		func finish(value: T?) {
@@ -65,13 +65,13 @@ struct MultiCache<T>: Cache {
 		get(0, key: key, completion: finish)
 	}
 
-	func remove(key key: String, completion: (() -> Void)?) {
+	public func remove(key key: String, completion: (() -> Void)?) {
 		coordinate(block: { cache, finish in
 			cache.remove(key: key, completion: finish)
 		}, completion: completion)
 	}
 
-	func removeAll(completion completion: (() -> Void)?) {
+	public func removeAll(completion completion: (() -> Void)?) {
 		coordinate(block: { cache, finish in
 			cache.removeAll(completion: finish)
 		}, completion: completion)
