@@ -2,6 +2,8 @@
 
 A generic caching library for Swift. Cache depends on Foundation.
 
+This is still very much a work in progress.
+
 
 ## Usage
 
