@@ -6,7 +6,7 @@
 //  Copyright © 2016 Sam Soffes. All rights reserved.
 //
 
-class Box<T> {
+final class Box<T> {
 
 	// MARK: - Properties
 
