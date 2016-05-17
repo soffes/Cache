@@ -47,6 +47,7 @@
 				21256E2B1CEA6CCD003B9F67 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		21256E2B1CEA6CCD003B9F67 /* Products */ = {
 			isa = PBXGroup;
