@@ -31,10 +31,6 @@ public final class MemoryCache<T>: Cache {
 				notificationCenter.addObserver(cache, selector: #selector(NSCache.removeAllObjects), name: UIApplicationDidReceiveMemoryWarningNotification, object: nil)
 			}
 		}
-
-		deinit {
-			NSNotificationCenter.defaultCenter().removeObserver(cache)
-		}
 	#else
 		public init(countLimit: Int? = nil) {
 			cache.countLimit = countLimit ?? 0
