@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21B5054B1CFF9E7F0067FB9A /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791A1CEA6CFE0046ACE2 /* Cache.swift */; };
+		21B5054C1CFF9E7F0067FB9A /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791C1CEA6CFE0046ACE2 /* MemoryCache.swift */; };
+		21B5054D1CFF9E7F0067FB9A /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791B1CEA6CFE0046ACE2 /* DiskCache.swift */; };
+		21B5054E1CFF9E7F0067FB9A /* MultiCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791D1CEA6CFE0046ACE2 /* MultiCache.swift */; };
+		21B5054F1CFF9E7F0067FB9A /* AnyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E879181CEA6CFE0046ACE2 /* AnyCache.swift */; };
+		21B505501CFF9E7F0067FB9A /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E879191CEA6CFE0046ACE2 /* Box.swift */; };
+		21B505511CFF9E830067FB9A /* Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 21E8791F1CEA6CFE0046ACE2 /* Cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21E879211CEA6CFE0046ACE2 /* AnyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E879181CEA6CFE0046ACE2 /* AnyCache.swift */; };
 		21E879221CEA6CFE0046ACE2 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E879191CEA6CFE0046ACE2 /* Box.swift */; };
 		21E879231CEA6CFE0046ACE2 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791A1CEA6CFE0046ACE2 /* Cache.swift */; };
@@ -18,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		21256E2A1CEA6CCD003B9F67 /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21B505431CFF9E610067FB9A /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E879181CEA6CFE0046ACE2 /* AnyCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCache.swift; sourceTree = "<group>"; };
 		21E879191CEA6CFE0046ACE2 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		21E8791A1CEA6CFE0046ACE2 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
@@ -30,6 +38,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		21256E261CEA6CCD003B9F67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21B5053F1CFF9E610067FB9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -53,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				21256E2A1CEA6CCD003B9F67 /* Cache.framework */,
+				21B505431CFF9E610067FB9A /* Cache.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +106,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		21B505401CFF9E610067FB9A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21B505511CFF9E830067FB9A /* Cache.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -111,6 +135,24 @@
 			productReference = 21256E2A1CEA6CCD003B9F67 /* Cache.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		21B505421CFF9E610067FB9A /* Cache-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21B5054A1CFF9E610067FB9A /* Build configuration list for PBXNativeTarget "Cache-OSX" */;
+			buildPhases = (
+				21B5053E1CFF9E610067FB9A /* Sources */,
+				21B5053F1CFF9E610067FB9A /* Frameworks */,
+				21B505401CFF9E610067FB9A /* Headers */,
+				21B505411CFF9E610067FB9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cache-OSX";
+			productName = "Cache-OSX";
+			productReference = 21B505431CFF9E610067FB9A /* Cache.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -121,6 +163,9 @@
 				ORGANIZATIONNAME = "Sam Soffes";
 				TargetAttributes = {
 					21256E291CEA6CCD003B9F67 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					21B505421CFF9E610067FB9A = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -138,12 +183,20 @@
 			projectRoot = "";
 			targets = (
 				21256E291CEA6CCD003B9F67 /* Cache-iOS */,
+				21B505421CFF9E610067FB9A /* Cache-OSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		21256E281CEA6CCD003B9F67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21B505411CFF9E610067FB9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -163,6 +216,19 @@
 				21E879241CEA6CFE0046ACE2 /* DiskCache.swift in Sources */,
 				21E879231CEA6CFE0046ACE2 /* Cache.swift in Sources */,
 				21E879221CEA6CFE0046ACE2 /* Box.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21B5053E1CFF9E610067FB9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21B5054B1CFF9E7F0067FB9A /* Cache.swift in Sources */,
+				21B5054C1CFF9E7F0067FB9A /* MemoryCache.swift in Sources */,
+				21B5054E1CFF9E7F0067FB9A /* MultiCache.swift in Sources */,
+				21B505501CFF9E7F0067FB9A /* Box.swift in Sources */,
+				21B5054F1CFF9E7F0067FB9A /* AnyCache.swift in Sources */,
+				21B5054D1CFF9E7F0067FB9A /* DiskCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +273,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -250,7 +317,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -294,6 +362,48 @@
 			};
 			name = Release;
 		};
+		21B505481CFF9E610067FB9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Support/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.cache;
+				PRODUCT_NAME = Cache;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		21B505491CFF9E610067FB9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Support/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.cache;
+				PRODUCT_NAME = Cache;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -314,6 +424,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		21B5054A1CFF9E610067FB9A /* Build configuration list for PBXNativeTarget "Cache-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21B505481CFF9E610067FB9A /* Debug */,
+				21B505491CFF9E610067FB9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
