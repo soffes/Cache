@@ -135,9 +135,9 @@
 			productReference = 21256E2A1CEA6CCD003B9F67 /* Cache.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		21B505421CFF9E610067FB9A /* Cache-OSX */ = {
+		21B505421CFF9E610067FB9A /* Cache-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21B5054A1CFF9E610067FB9A /* Build configuration list for PBXNativeTarget "Cache-OSX" */;
+			buildConfigurationList = 21B5054A1CFF9E610067FB9A /* Build configuration list for PBXNativeTarget "Cache-macOS" */;
 			buildPhases = (
 				21B5053E1CFF9E610067FB9A /* Sources */,
 				21B5053F1CFF9E610067FB9A /* Frameworks */,
@@ -148,7 +148,7 @@
 			);
 			dependencies = (
 			);
-			name = "Cache-OSX";
+			name = "Cache-macOS";
 			productName = "Cache-OSX";
 			productReference = 21B505431CFF9E610067FB9A /* Cache.framework */;
 			productType = "com.apple.product-type.framework";
@@ -168,6 +168,9 @@
 					};
 					21B505421CFF9E610067FB9A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -184,7 +187,7 @@
 			projectRoot = "";
 			targets = (
 				21256E291CEA6CCD003B9F67 /* Cache-iOS */,
-				21B505421CFF9E610067FB9A /* Cache-OSX */,
+				21B505421CFF9E610067FB9A /* Cache-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -370,7 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -391,7 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -430,7 +433,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21B5054A1CFF9E610067FB9A /* Build configuration list for PBXNativeTarget "Cache-OSX" */ = {
+		21B5054A1CFF9E610067FB9A /* Build configuration list for PBXNativeTarget "Cache-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21B505481CFF9E610067FB9A /* Debug */,
