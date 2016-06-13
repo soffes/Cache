@@ -10,7 +10,7 @@ public struct AnyCache<T>: Cache {
 
 	// MARK: - Properties
 
-	private let _get: (String, T? -> Void) -> ()
+	private let _get: (String, (T?) -> Void) -> ()
 	private let _set: (String, T, (() -> Void)?) -> ()
 	private let _remove: (String, (() -> Void)?) -> ()
 	private let _removeAll: ((() -> Void)?) -> ()
@@ -28,19 +28,19 @@ public struct AnyCache<T>: Cache {
 
 	// MARK: - Cache
 
-	public func get(key key: String, completion: (T? -> Void)) {
+	public func get(key: String, completion: ((T?) -> Void)) {
 		_get(key, completion)
 	}
 
-	public func set(key key: String, value: T, completion: (() -> Void)? = nil) {
+	public func set(key: String, value: T, completion: (() -> Void)? = nil) {
 		_set(key, value, completion)
 	}
 
-	public func remove(key key: String, completion: (() -> Void)? = nil) {
+	public func remove(key: String, completion: (() -> Void)? = nil) {
 		_remove(key, completion)
 	}
 
-	public func removeAll(completion completion: (() -> Void)? = nil) {
+	public func removeAll(completion: (() -> Void)? = nil) {
 		_removeAll(completion)
 	}
 }
