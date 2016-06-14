@@ -164,6 +164,8 @@
 				TargetAttributes = {
 					21256E291CEA6CCD003B9F67 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
 						LastSwiftMigration = 0800;
 					};
 					21B505421CFF9E610067FB9A = {
