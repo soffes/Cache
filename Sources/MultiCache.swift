@@ -43,7 +43,7 @@ public struct MultiCache<T>: Cache {
 
 				// Fill previous caches that missed
 				for miss in misses {
-					miss.set(key: key, value: value, completion: nil)
+					miss.set(key: key, value: value)
 				}
 				return
 			}
