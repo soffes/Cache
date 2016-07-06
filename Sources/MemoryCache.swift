@@ -26,14 +26,14 @@ public final class MemoryCache<T>: Cache {
 			storage.countLimit = countLimit ?? 0
 
 			if automaticallyRemoveAllObjects {
-				let notificationCenter = NotificationCenter.default()
+				let notificationCenter = NotificationCenter.default
 				notificationCenter.addObserver(storage, selector: #selector(storage.dynamicType.removeAllObjects), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
 				notificationCenter.addObserver(storage, selector: #selector(storage.dynamicType.removeAllObjects), name: NSNotification.Name.UIApplicationDidReceiveMemoryWarning, object: nil)
 			}
 		}
 
 		deinit {
-			NotificationCenter.default().removeObserver(storage)
+			NotificationCenter.default.removeObserver(storage)
 		}
 	#else
 		public init(countLimit: Int? = nil) {
