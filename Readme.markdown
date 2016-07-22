@@ -1,5 +1,7 @@
 # Cache
 
+[![Version](https://img.shields.io/github/release/soffes/Cache.svg)](https://github.com/soffes/Cache/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 A generic caching library for Swift. Cache depends on Foundation.
 
 This is still very much a work in progress.
