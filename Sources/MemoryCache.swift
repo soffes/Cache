@@ -16,7 +16,7 @@ public final class MemoryCache<T>: Cache {
 
 	// MARK: - Properties
 
-	private let storage = Foundation.Cache<NSString, Box<T>>()
+	private let storage = NSCache<NSString, Box<T>>()
 
 
 	// MARK: - Initializers

@@ -16,7 +16,7 @@ public struct DiskCache<T: NSCoding>: Cache {
 
 	private let directory: String
 	private let fileManager = FileManager()
-	private let queue = DispatchQueue(label: "com.samsoffes.cache.disk-cache", attributes: DispatchQueueAttributes.concurrent)
+	private let queue = DispatchQueue(label: "com.samsoffes.cache.disk-cache", attributes: .concurrent)
 
 
 	// MARK: - Initializers
@@ -24,7 +24,7 @@ public struct DiskCache<T: NSCoding>: Cache {
 	public init?(directory: String) {
 		var isDirectory: ObjCBool = false
 		// Ensure the directory exists
-		if fileManager.fileExists(atPath: directory, isDirectory: &isDirectory) && isDirectory {
+		if fileManager.fileExists(atPath: directory, isDirectory: &isDirectory) && isDirectory.boolValue {
 			self.directory = directory
 			return
 		}
