@@ -96,7 +96,7 @@ public struct DiskCache<T: NSCoding>: Cache {
 
 	// MARK: - Private
 
-	private func coordinate(barrier: Bool = false, block: () -> Void) {
+	private func coordinate(barrier: Bool = false, block: @escaping () -> Void) {
 		if barrier {
 			queue.async(flags: .barrier, execute: block)
 			return

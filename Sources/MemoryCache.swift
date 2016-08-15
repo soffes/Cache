@@ -27,8 +27,8 @@ public final class MemoryCache<T>: Cache {
 
 			if automaticallyRemoveAllObjects {
 				let notificationCenter = NotificationCenter.default
-				notificationCenter.addObserver(storage, selector: #selector(storage.dynamicType.removeAllObjects), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
-				notificationCenter.addObserver(storage, selector: #selector(storage.dynamicType.removeAllObjects), name: NSNotification.Name.UIApplicationDidReceiveMemoryWarning, object: nil)
+				notificationCenter.addObserver(storage, selector: #selector(type(of: storage).removeAllObjects), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+				notificationCenter.addObserver(storage, selector: #selector(type(of: storage).removeAllObjects), name: NSNotification.Name.UIApplicationDidReceiveMemoryWarning, object: nil)
 			}
 		}
 
@@ -45,18 +45,18 @@ public final class MemoryCache<T>: Cache {
 	// MARK: - Cache
 
 	public func set(key: String, value: T, completion: (() -> Void)? = nil) {
-		storage.setObject(Box(value), forKey: key)
+		storage.setObject(Box(value), forKey: key as NSString)
 		completion?()
 	}
 
 	public func get(key: String, completion: ((T?) -> Void)) {
-		let box = storage.object(forKey: key)
+		let box = storage.object(forKey: key as NSString)
 		let value = box.flatMap({ $0.value })
 		completion(value)
 	}
 
 	public func remove(key: String, completion: (() -> Void)? = nil) {
-		storage.removeObject(forKey: key)
+		storage.removeObject(forKey: key as NSString)
 		completion?()
 	}
 
@@ -70,14 +70,14 @@ public final class MemoryCache<T>: Cache {
 	
 	public subscript(key: String) -> T? {
 		get {
-			return (storage.object(forKey: key))?.value
+			return (storage.object(forKey: key as NSString))?.value
 		}
 		
 		set(newValue) {
 			if let newValue = newValue {
-				storage.setObject(Box(newValue), forKey: key)
+				storage.setObject(Box(newValue), forKey: key as NSString)
 			} else {
-				storage.removeObject(forKey: key)
+				storage.removeObject(forKey: key as NSString)
 			}
 		}
 	}
