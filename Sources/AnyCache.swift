@@ -10,7 +10,7 @@ public struct AnyCache<T>: Cache {
 
 	// MARK: - Properties
 
-	private let _get: (String, (T?) -> Void) -> ()
+	private let _get: (String, @escaping (T?) -> Void) -> ()
 	private let _set: (String, T, (() -> Void)?) -> ()
 	private let _remove: (String, (() -> Void)?) -> ()
 	private let _removeAll: ((() -> Void)?) -> ()
@@ -18,7 +18,7 @@ public struct AnyCache<T>: Cache {
 
 	// MARK: - Initializers
 
-	public init<C: Cache where T == C.Element>(_ cache: C) {
+	public init<C: Cache>(_ cache: C) where T == C.Element {
 		_get = { cache.get(key: $0, completion: $1) }
 		_set = { cache.set(key: $0, value: $1, completion: $2) }
 		_remove = { cache.remove(key: $0, completion: $1) }
