@@ -16,7 +16,7 @@ public final class MemoryCache<T>: Cache {
 
 	// MARK: - Properties
 
-	private let storage = Foundation.Cache<NSString, Box<T>>()
+	private let storage = NSCache<NSString, Box<T>>()
 
 
 	// MARK: - Initializers
@@ -26,14 +26,10 @@ public final class MemoryCache<T>: Cache {
 			storage.countLimit = countLimit ?? 0
 
 			if automaticallyRemoveAllObjects {
-				let notificationCenter = NotificationCenter.default()
-				notificationCenter.addObserver(storage, selector: #selector(storage.dynamicType.removeAllObjects), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
-				notificationCenter.addObserver(storage, selector: #selector(storage.dynamicType.removeAllObjects), name: NSNotification.Name.UIApplicationDidReceiveMemoryWarning, object: nil)
+				let notificationCenter = NotificationCenter.default
+				notificationCenter.addObserver(storage, selector: #selector(type(of: storage).removeAllObjects), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+				notificationCenter.addObserver(storage, selector: #selector(type(of: storage).removeAllObjects), name: NSNotification.Name.UIApplicationDidReceiveMemoryWarning, object: nil)
 			}
-		}
-
-		deinit {
-			NotificationCenter.default().removeObserver(storage)
 		}
 	#else
 		public init(countLimit: Int? = nil) {
@@ -45,18 +41,18 @@ public final class MemoryCache<T>: Cache {
 	// MARK: - Cache
 
 	public func set(key: String, value: T, completion: (() -> Void)? = nil) {
-		storage.setObject(Box(value), forKey: key)
+		storage.setObject(Box(value), forKey: key as NSString)
 		completion?()
 	}
 
 	public func get(key: String, completion: ((T?) -> Void)) {
-		let box = storage.object(forKey: key)
+		let box = storage.object(forKey: key as NSString)
 		let value = box.flatMap({ $0.value })
 		completion(value)
 	}
 
 	public func remove(key: String, completion: (() -> Void)? = nil) {
-		storage.removeObject(forKey: key)
+		storage.removeObject(forKey: key as NSString)
 		completion?()
 	}
 
@@ -70,14 +66,14 @@ public final class MemoryCache<T>: Cache {
 	
 	public subscript(key: String) -> T? {
 		get {
-			return (storage.object(forKey: key))?.value
+			return (storage.object(forKey: key as NSString))?.value
 		}
 		
 		set(newValue) {
 			if let newValue = newValue {
-				storage.setObject(Box(newValue), forKey: key)
+				storage.setObject(Box(newValue), forKey: key as NSString)
 			} else {
-				storage.removeObject(forKey: key)
+				storage.removeObject(forKey: key as NSString)
 			}
 		}
 	}
