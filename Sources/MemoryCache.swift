@@ -45,7 +45,7 @@ public final class MemoryCache<T>: Cache {
 		completion?()
 	}
 
-	public func get(key: String, completion: ((T?) -> Void)) {
+	public func get(key: String, completion: @escaping ((T?) -> Void)) {
 		let box = storage.object(forKey: key as NSString)
 		let value = box.flatMap({ $0.value })
 		completion(value)

@@ -32,7 +32,7 @@ public struct MultiCache<T>: Cache {
 		}, completion: completion)
 	}
 
-	public func get(key: String, completion: ((T?) -> Void)) {
+	public func get(key: String, completion: @escaping ((T?) -> Void)) {
 		var misses = [AnyCache<T>]()
 
 		func finish(_ value: T?) {
@@ -81,7 +81,7 @@ public struct MultiCache<T>: Cache {
 	// MARK: - Private
 
 	// Calls the completion block after all messages to all caches are complete.
-	private func coordinate(block: ((AnyCache<T>, (() -> Void)) -> Void), completion: (() -> Void)?) {
+	private func coordinate(block: ((AnyCache<T>, @escaping (() -> Void)) -> Void), completion: (() -> Void)?) {
 		// Count starts with the count of caches
 		var count = Int32(caches.count)
 
@@ -100,7 +100,7 @@ public struct MultiCache<T>: Cache {
 		caches.forEach { block($0, finish) }
 	}
 
-	private func get(_ index: Int, key: String, completion: ((T?) -> Void)) {
+	private func get(_ index: Int, key: String, completion: @escaping ((T?) -> Void)) {
 		caches[index].get(key: key, completion: completion)
 	}
 }

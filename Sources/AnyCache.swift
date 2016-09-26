@@ -28,7 +28,7 @@ public struct AnyCache<T>: Cache {
 
 	// MARK: - Cache
 
-	public func get(key: String, completion: ((T?) -> Void)) {
+	public func get(key: String, completion: @escaping ((T?) -> Void)) {
 		_get(key, completion)
 	}
 

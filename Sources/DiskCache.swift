@@ -41,7 +41,7 @@ public struct DiskCache<T: NSCoding>: Cache {
 
 	// MARK: - Cache
 
-	public func get(key: String, completion: ((T?) -> Void)) {
+	public func get(key: String, completion: @escaping ((T?) -> Void)) {
 		let path = pathForKey(key)
 
 		coordinate {
