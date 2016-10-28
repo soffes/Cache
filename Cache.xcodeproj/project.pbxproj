@@ -135,9 +135,9 @@
 			productReference = 21256E2A1CEA6CCD003B9F67 /* Cache.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		21B505421CFF9E610067FB9A /* Cache-OSX */ = {
+		21B505421CFF9E610067FB9A /* Cache-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21B5054A1CFF9E610067FB9A /* Build configuration list for PBXNativeTarget "Cache-OSX" */;
+			buildConfigurationList = 21B5054A1CFF9E610067FB9A /* Build configuration list for PBXNativeTarget "Cache-macOS" */;
 			buildPhases = (
 				21B5053E1CFF9E610067FB9A /* Sources */,
 				21B5053F1CFF9E610067FB9A /* Frameworks */,
@@ -148,7 +148,7 @@
 			);
 			dependencies = (
 			);
-			name = "Cache-OSX";
+			name = "Cache-macOS";
 			productName = "Cache-OSX";
 			productReference = 21B505431CFF9E610067FB9A /* Cache.framework */;
 			productType = "com.apple.product-type.framework";
@@ -159,14 +159,20 @@
 		21256E211CEA6CCD003B9F67 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Sam Soffes";
 				TargetAttributes = {
 					21256E291CEA6CCD003B9F67 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
+						LastSwiftMigration = 0800;
 					};
 					21B505421CFF9E610067FB9A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -183,7 +189,7 @@
 			projectRoot = "";
 			targets = (
 				21256E291CEA6CCD003B9F67 /* Cache-iOS */,
-				21B505421CFF9E610067FB9A /* Cache-OSX */,
+				21B505421CFF9E610067FB9A /* Cache-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -253,7 +259,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -279,6 +284,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -303,7 +309,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -321,6 +326,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -359,6 +365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.cache;
 				PRODUCT_NAME = Cache;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -366,7 +373,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -387,7 +393,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -401,6 +406,7 @@
 				PRODUCT_NAME = Cache;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -425,13 +431,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21B5054A1CFF9E610067FB9A /* Build configuration list for PBXNativeTarget "Cache-OSX" */ = {
+		21B5054A1CFF9E610067FB9A /* Build configuration list for PBXNativeTarget "Cache-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21B505481CFF9E610067FB9A /* Debug */,
 				21B505491CFF9E610067FB9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -15,8 +15,8 @@ public struct DiskCache<T: NSCoding>: Cache {
 	// MARK: - Properties
 
 	private let directory: String
-	private let fileManager = NSFileManager()
-	private let queue = dispatch_queue_create("com.samsoffes.cache.disk-cache", DISPATCH_QUEUE_CONCURRENT)
+	private let fileManager = FileManager()
+	private let queue = DispatchQueue(label: "com.samsoffes.cache.disk-cache", attributes: .concurrent)
 
 
 	// MARK: - Initializers
@@ -24,14 +24,14 @@ public struct DiskCache<T: NSCoding>: Cache {
 	public init?(directory: String) {
 		var isDirectory: ObjCBool = false
 		// Ensure the directory exists
-		if fileManager.fileExistsAtPath(directory, isDirectory: &isDirectory) && isDirectory {
+		if fileManager.fileExists(atPath: directory, isDirectory: &isDirectory) && isDirectory.boolValue {
 			self.directory = directory
 			return
 		}
 
 		// Try to create the directory
 		do {
-			try fileManager.createDirectoryAtPath(directory, withIntermediateDirectories: true, attributes: nil)
+			try fileManager.createDirectory(atPath: directory, withIntermediateDirectories: true, attributes: nil)
 			self.directory = directory
 		} catch {}
 
@@ -41,23 +41,23 @@ public struct DiskCache<T: NSCoding>: Cache {
 
 	// MARK: - Cache
 
-	public func get(key key: String, completion: (T? -> Void)) {
+	public func get(key: String, completion: ((T?) -> Void)) {
 		let path = pathForKey(key)
 
 		coordinate {
-			let value = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? T
+			let value = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? T
 			completion(value)
 		}
 	}
 
-	public func set(key key: String, value: T, completion: (() -> Void)? = nil) {
+	public func set(key: String, value: T, completion: (() -> Void)? = nil) {
 		let path = pathForKey(key)
 		let fileManager = self.fileManager
 
 		coordinate(barrier: true) {
-			if fileManager.fileExistsAtPath(path) {
+			if fileManager.fileExists(atPath: path) {
 				do {
-					try fileManager.removeItemAtPath(path)
+					try fileManager.removeItem(atPath: path)
 				} catch {}
 			}
 
@@ -65,29 +65,29 @@ public struct DiskCache<T: NSCoding>: Cache {
 		}
 	}
 
-	public func remove(key key: String, completion: (() -> Void)? = nil) {
+	public func remove(key: String, completion: (() -> Void)? = nil) {
 		let path = pathForKey(key)
 		let fileManager = self.fileManager
 
 		coordinate {
-			if fileManager.fileExistsAtPath(path) {
+			if fileManager.fileExists(atPath: path) {
 				do {
-					try fileManager.removeItemAtPath(path)
+					try fileManager.removeItem(atPath: path)
 				} catch {}
 			}
 		}
 	}
 
-	public func removeAll(completion completion: (() -> Void)? = nil) {
+	public func removeAll(completion: (() -> Void)? = nil) {
 		let fileManager = self.fileManager
 		let directory = self.directory
 
 		coordinate {
-			guard let paths = try? fileManager.contentsOfDirectoryAtPath(directory) else { return }
+			guard let paths = try? fileManager.contentsOfDirectory(atPath: directory) else { return }
 
 			for path in paths {
 				do {
-					try fileManager.removeItemAtPath(path)
+					try fileManager.removeItem(atPath: path)
 				} catch {}
 			}
 		}
@@ -96,16 +96,16 @@ public struct DiskCache<T: NSCoding>: Cache {
 
 	// MARK: - Private
 
-	private func coordinate(barrier barrier: Bool = false, block: () -> Void) {
+	private func coordinate(barrier: Bool = false, block: @escaping () -> Void) {
 		if barrier {
-			dispatch_barrier_async(queue, block)
+			queue.async(flags: .barrier, execute: block)
 			return
 		}
 
-		dispatch_async(queue, block)
+		queue.async(execute: block)
 	}
 
-	private func pathForKey(key: String) -> String {
-		return (directory as NSString).stringByAppendingPathComponent(key)
+	private func pathForKey(_ key: String) -> String {
+		return (directory as NSString).appendingPathComponent(key)
 	}
 }
