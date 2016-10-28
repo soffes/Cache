@@ -6,8 +6,6 @@
 //  Copyright © 2016 Sam Soffes. All rights reserved.
 //
 
-import libkern
-
 /// Reads from the first cache available. Writes to all caches in order. If there is a cache miss and the value is later
 /// found in a subsequent cache, it is written to all previous caches.
 public struct MultiCache<Element>: Cache {
