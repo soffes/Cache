@@ -10,7 +10,7 @@ import Foundation
 
 /// Disk cache. All reads run concurrently. Writes wait for all other queue actions to finish and run one at a time
 /// using dispatch barriers.
-public struct DiskCache<T: NSCoding>: Cache {
+public struct DiskCache<Element: NSCoding>: Cache {
 
 	// MARK: - Properties
 
@@ -41,16 +41,16 @@ public struct DiskCache<T: NSCoding>: Cache {
 
 	// MARK: - Cache
 
-	public func get(key: String, completion: ((T?) -> Void)) {
+	public func get(key: String, completion: @escaping ((Element?) -> Void)) {
 		let path = pathForKey(key)
 
 		coordinate {
-			let value = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? T
+			let value = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? Element
 			completion(value)
 		}
 	}
 
-	public func set(key: String, value: T, completion: (() -> Void)? = nil) {
+	public func set(key: String, value: Element, completion: (() -> Void)? = nil) {
 		let path = pathForKey(key)
 		let fileManager = self.fileManager
 

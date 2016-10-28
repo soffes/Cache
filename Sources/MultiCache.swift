@@ -10,32 +10,32 @@ import libkern
 
 /// Reads from the first cache available. Writes to all caches in order. If there is a cache miss and the value is later
 /// found in a subsequent cache, it is written to all previous caches.
-public struct MultiCache<T>: Cache {
+public struct MultiCache<Element>: Cache {
 
 	// MARK: - Properties
 
-	public let caches: [AnyCache<T>]
+	public let caches: [AnyCache<Element>]
 
 
 	// MARK: - Initializers
 
-	public init(caches: [AnyCache<T>]) {
+	public init(caches: [AnyCache<Element>]) {
 		self.caches = caches
 	}
 
 
 	// MARK: - Cache
 
-	public func set(key: String, value: T, completion: (() -> Void)? = nil) {
+	public func set(key: String, value: Element, completion: (() -> Void)? = nil) {
 		coordinate(block: { cache, finish in
 			cache.set(key: key, value: value, completion: finish)
 		}, completion: completion)
 	}
 
-	public func get(key: String, completion: ((T?) -> Void)) {
-		var misses = [AnyCache<T>]()
+	public func get(key: String, completion: @escaping ((Element?) -> Void)) {
+		var misses = [AnyCache<Element>]()
 
-		func finish(_ value: T?) {
+		func finish(_ value: Element?) {
 			// Found
 			if let value = value {
 				// Call completion with the value
@@ -58,11 +58,11 @@ public struct MultiCache<T>: Cache {
 			misses.append(self.caches[misses.count])
 
 			// Try the next cache
-			get(misses.count, key: key, completion: finish)
+			get(key: key, cacheIndex: misses.count, completion: finish)
 		}
 
 		// Try the first cache
-		get(0, key: key, completion: finish)
+		get(key: key, cacheIndex: 0, completion: finish)
 	}
 
 	public func remove(key: String, completion: (() -> Void)?) {
@@ -81,7 +81,7 @@ public struct MultiCache<T>: Cache {
 	// MARK: - Private
 
 	// Calls the completion block after all messages to all caches are complete.
-	private func coordinate(block: ((AnyCache<T>, (() -> Void)) -> Void), completion: (() -> Void)?) {
+	private func coordinate(block: ((AnyCache<Element>, (() -> Void)?) -> Void), completion: (() -> Void)?) {
 		// Count starts with the count of caches
 		var count = Int32(caches.count)
 
@@ -100,7 +100,7 @@ public struct MultiCache<T>: Cache {
 		caches.forEach { block($0, finish) }
 	}
 
-	private func get(_ index: Int, key: String, completion: ((T?) -> Void)) {
+	private func get(key: String, cacheIndex index: Int, completion: @escaping ((Element?) -> Void)) {
 		caches[index].get(key: key, completion: completion)
 	}
 }

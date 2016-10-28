@@ -12,11 +12,11 @@
 	import Foundation
 #endif
 
-public final class MemoryCache<T>: Cache {
+public final class MemoryCache<Element>: Cache {
 
 	// MARK: - Properties
 
-	private let storage = NSCache<NSString, Box<T>>()
+	private let storage = NSCache<NSString, Box<Element>>()
 
 
 	// MARK: - Initializers
@@ -40,12 +40,12 @@ public final class MemoryCache<T>: Cache {
 
 	// MARK: - Cache
 
-	public func set(key: String, value: T, completion: (() -> Void)? = nil) {
+	public func set(key: String, value: Element, completion: (() -> Void)? = nil) {
 		storage.setObject(Box(value), forKey: key as NSString)
 		completion?()
 	}
 
-	public func get(key: String, completion: ((T?) -> Void)) {
+	public func get(key: String, completion: @escaping ((Element?) -> Void)) {
 		let box = storage.object(forKey: key as NSString)
 		let value = box.flatMap({ $0.value })
 		completion(value)
@@ -64,7 +64,7 @@ public final class MemoryCache<T>: Cache {
 	
 	// MARK: - Synchronous
 	
-	public subscript(key: String) -> T? {
+	public subscript(key: String) -> Element? {
 		get {
 			return (storage.object(forKey: key as NSString))?.value
 		}
