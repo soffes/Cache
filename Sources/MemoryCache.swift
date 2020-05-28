@@ -27,8 +27,8 @@ public final class MemoryCache<Element>: Cache {
 
 			if automaticallyRemoveAllObjects {
 				let notificationCenter = NotificationCenter.default
-				notificationCenter.addObserver(storage, selector: #selector(type(of: storage).removeAllObjects), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
-				notificationCenter.addObserver(storage, selector: #selector(type(of: storage).removeAllObjects), name: NSNotification.Name.UIApplicationDidReceiveMemoryWarning, object: nil)
+				notificationCenter.addObserver(storage, selector: #selector(type(of: storage).removeAllObjects), name: UIApplication.didEnterBackgroundNotification, object: nil)
+				notificationCenter.addObserver(storage, selector: #selector(type(of: storage).removeAllObjects), name: UIApplication.didReceiveMemoryWarningNotification, object: nil)
 			}
 		}
 	#else
