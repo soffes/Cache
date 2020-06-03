@@ -1,11 +1,3 @@
-//
-//  MemoryCache.swift
-//  Cache
-//
-//  Created by Sam Soffes on 5/6/16.
-//  Copyright © 2016 Sam Soffes. All rights reserved.
-//
-
 #if os(iOS) || os(tvOS)
 	import UIKit
 #else
@@ -17,7 +9,6 @@ public final class MemoryCache<Element>: Cache {
 	// MARK: - Properties
 
 	private let storage = NSCache<NSString, Box<Element>>()
-
 
 	// MARK: - Initializers
 
@@ -36,7 +27,6 @@ public final class MemoryCache<Element>: Cache {
 			storage.countLimit = countLimit ?? 0
 		}
 	#endif
-
 
 	// MARK: - Cache
 
@@ -60,7 +50,6 @@ public final class MemoryCache<Element>: Cache {
 		storage.removeAllObjects()
 		completion?()
 	}
-	
 	
 	// MARK: - Synchronous
 	

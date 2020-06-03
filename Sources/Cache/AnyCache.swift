@@ -1,11 +1,3 @@
-//
-//  AnyCache.swift
-//  Cache
-//
-//  Created by Sam Soffes on 5/6/16.
-//  Copyright © 2016 Sam Soffes. All rights reserved.
-//
-
 public struct AnyCache<Element>: Cache {
 
 	// MARK: - Properties
@@ -15,7 +7,6 @@ public struct AnyCache<Element>: Cache {
 	private let _remove: (String, (() -> Void)?) -> ()
 	private let _removeAll: ((() -> Void)?) -> ()
 
-
 	// MARK: - Initializers
 
 	public init<C: Cache>(_ cache: C) where Element == C.Element {
@@ -24,7 +15,6 @@ public struct AnyCache<Element>: Cache {
 		_remove = { cache.remove(key: $0, completion: $1) }
 		_removeAll = { cache.removeAll(completion: $0) }
 	}
-
 
 	// MARK: - Cache
 

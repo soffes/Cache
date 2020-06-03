@@ -1,11 +1,3 @@
-//
-//  DiskCache.swift
-//  Cache
-//
-//  Created by Sam Soffes on 5/6/16.
-//  Copyright © 2016 Sam Soffes. All rights reserved.
-//
-
 import Foundation
 
 /// Disk cache. All reads run concurrently. Writes wait for all other queue actions to finish and run one at a time
@@ -17,7 +9,6 @@ public struct DiskCache<Element: NSCoding>: Cache {
 	private let directory: String
 	private let fileManager = FileManager()
 	private let queue = DispatchQueue(label: "com.samsoffes.cache.disk-cache", attributes: .concurrent)
-
 
 	// MARK: - Initializers
 
@@ -37,7 +28,6 @@ public struct DiskCache<Element: NSCoding>: Cache {
 
 		return nil
 	}
-
 
 	// MARK: - Cache
 
@@ -92,7 +82,6 @@ public struct DiskCache<Element: NSCoding>: Cache {
 			}
 		}
 	}
-
 
 	// MARK: - Private
 

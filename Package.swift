@@ -1,13 +1,13 @@
-//
-//  Package.swift
-//  Cache
-//
-//  Created by Sam Soffes on 5/12/16.
-//  Copyright © 2016 Sam Soffes. All rights reserved.
-//
+// swift-tools-version:5.2
 
 import PackageDescription
 
 let package = Package(
-    name: "Cache"
+    name: "Cache",
+    products: [
+        .library(name: "Cache", targets: ["Cache"])
+    ],
+    targets: [
+        .target(name: "Cache")
+    ]
 )

@@ -1,11 +1,3 @@
-//
-//  MultiCache.swift
-//  Cache
-//
-//  Created by Sam Soffes on 5/6/16.
-//  Copyright © 2016 Sam Soffes. All rights reserved.
-//
-
 /// Reads from the first cache available. Writes to all caches in order. If there is a cache miss and the value is later
 /// found in a subsequent cache, it is written to all previous caches.
 public struct MultiCache<Element>: Cache {
@@ -14,13 +6,11 @@ public struct MultiCache<Element>: Cache {
 
 	public let caches: [AnyCache<Element>]
 
-
 	// MARK: - Initializers
 
 	public init(caches: [AnyCache<Element>]) {
 		self.caches = caches
 	}
-
 
 	// MARK: - Cache
 
@@ -74,7 +64,6 @@ public struct MultiCache<Element>: Cache {
 			cache.removeAll(completion: finish)
 		}, completion: completion)
 	}
-
 
 	// MARK: - Private
 

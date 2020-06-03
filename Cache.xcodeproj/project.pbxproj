@@ -7,47 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2139281F248806710009AFBF /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21392819248806710009AFBF /* MemoryCache.swift */; };
+		21392820248806710009AFBF /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21392819248806710009AFBF /* MemoryCache.swift */; };
+		21392821248806710009AFBF /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21392819248806710009AFBF /* MemoryCache.swift */; };
+		21392822248806710009AFBF /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21392819248806710009AFBF /* MemoryCache.swift */; };
+		21392823248806710009AFBF /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281A248806710009AFBF /* Box.swift */; };
+		21392824248806710009AFBF /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281A248806710009AFBF /* Box.swift */; };
+		21392825248806710009AFBF /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281A248806710009AFBF /* Box.swift */; };
+		21392826248806710009AFBF /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281A248806710009AFBF /* Box.swift */; };
+		21392827248806710009AFBF /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281B248806710009AFBF /* DiskCache.swift */; };
+		21392828248806710009AFBF /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281B248806710009AFBF /* DiskCache.swift */; };
+		21392829248806710009AFBF /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281B248806710009AFBF /* DiskCache.swift */; };
+		2139282A248806710009AFBF /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281B248806710009AFBF /* DiskCache.swift */; };
+		2139282B248806710009AFBF /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281C248806710009AFBF /* Cache.swift */; };
+		2139282C248806710009AFBF /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281C248806710009AFBF /* Cache.swift */; };
+		2139282D248806710009AFBF /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281C248806710009AFBF /* Cache.swift */; };
+		2139282E248806710009AFBF /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281C248806710009AFBF /* Cache.swift */; };
+		2139282F248806710009AFBF /* MultiCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281D248806710009AFBF /* MultiCache.swift */; };
+		21392830248806710009AFBF /* MultiCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281D248806710009AFBF /* MultiCache.swift */; };
+		21392831248806710009AFBF /* MultiCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281D248806710009AFBF /* MultiCache.swift */; };
+		21392832248806710009AFBF /* MultiCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281D248806710009AFBF /* MultiCache.swift */; };
+		21392833248806710009AFBF /* AnyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281E248806710009AFBF /* AnyCache.swift */; };
+		21392834248806710009AFBF /* AnyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281E248806710009AFBF /* AnyCache.swift */; };
+		21392835248806710009AFBF /* AnyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281E248806710009AFBF /* AnyCache.swift */; };
+		21392836248806710009AFBF /* AnyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139281E248806710009AFBF /* AnyCache.swift */; };
 		215DB4F61DC37A2600034124 /* Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 21E8791F1CEA6CFE0046ACE2 /* Cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		215DB4F71DC37A2600034124 /* Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 21E8791F1CEA6CFE0046ACE2 /* Cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		215DB4F81DC37A2C00034124 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791A1CEA6CFE0046ACE2 /* Cache.swift */; };
-		215DB4F91DC37A2C00034124 /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791C1CEA6CFE0046ACE2 /* MemoryCache.swift */; };
-		215DB4FA1DC37A2C00034124 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791B1CEA6CFE0046ACE2 /* DiskCache.swift */; };
-		215DB4FB1DC37A2C00034124 /* MultiCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791D1CEA6CFE0046ACE2 /* MultiCache.swift */; };
-		215DB4FC1DC37A2C00034124 /* AnyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E879181CEA6CFE0046ACE2 /* AnyCache.swift */; };
-		215DB4FD1DC37A2C00034124 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E879191CEA6CFE0046ACE2 /* Box.swift */; };
-		215DB4FE1DC37A2C00034124 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791A1CEA6CFE0046ACE2 /* Cache.swift */; };
-		215DB4FF1DC37A2C00034124 /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791C1CEA6CFE0046ACE2 /* MemoryCache.swift */; };
-		215DB5001DC37A2C00034124 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791B1CEA6CFE0046ACE2 /* DiskCache.swift */; };
-		215DB5011DC37A2C00034124 /* MultiCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791D1CEA6CFE0046ACE2 /* MultiCache.swift */; };
-		215DB5021DC37A2C00034124 /* AnyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E879181CEA6CFE0046ACE2 /* AnyCache.swift */; };
-		215DB5031DC37A2C00034124 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E879191CEA6CFE0046ACE2 /* Box.swift */; };
-		21B5054B1CFF9E7F0067FB9A /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791A1CEA6CFE0046ACE2 /* Cache.swift */; };
-		21B5054C1CFF9E7F0067FB9A /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791C1CEA6CFE0046ACE2 /* MemoryCache.swift */; };
-		21B5054D1CFF9E7F0067FB9A /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791B1CEA6CFE0046ACE2 /* DiskCache.swift */; };
-		21B5054E1CFF9E7F0067FB9A /* MultiCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791D1CEA6CFE0046ACE2 /* MultiCache.swift */; };
-		21B5054F1CFF9E7F0067FB9A /* AnyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E879181CEA6CFE0046ACE2 /* AnyCache.swift */; };
-		21B505501CFF9E7F0067FB9A /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E879191CEA6CFE0046ACE2 /* Box.swift */; };
 		21B505511CFF9E830067FB9A /* Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 21E8791F1CEA6CFE0046ACE2 /* Cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21E879211CEA6CFE0046ACE2 /* AnyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E879181CEA6CFE0046ACE2 /* AnyCache.swift */; };
-		21E879221CEA6CFE0046ACE2 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E879191CEA6CFE0046ACE2 /* Box.swift */; };
-		21E879231CEA6CFE0046ACE2 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791A1CEA6CFE0046ACE2 /* Cache.swift */; };
-		21E879241CEA6CFE0046ACE2 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791B1CEA6CFE0046ACE2 /* DiskCache.swift */; };
-		21E879251CEA6CFE0046ACE2 /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791C1CEA6CFE0046ACE2 /* MemoryCache.swift */; };
-		21E879261CEA6CFE0046ACE2 /* MultiCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8791D1CEA6CFE0046ACE2 /* MultiCache.swift */; };
 		21E879271CEA6CFE0046ACE2 /* Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 21E8791F1CEA6CFE0046ACE2 /* Cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		21256E2A1CEA6CCD003B9F67 /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21392819248806710009AFBF /* MemoryCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryCache.swift; sourceTree = "<group>"; };
+		2139281A248806710009AFBF /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		2139281B248806710009AFBF /* DiskCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
+		2139281C248806710009AFBF /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		2139281D248806710009AFBF /* MultiCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiCache.swift; sourceTree = "<group>"; };
+		2139281E248806710009AFBF /* AnyCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCache.swift; sourceTree = "<group>"; };
 		215DB4E11DC379F800034124 /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		215DB4EE1DC37A0100034124 /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B505431CFF9E610067FB9A /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		21E879181CEA6CFE0046ACE2 /* AnyCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCache.swift; sourceTree = "<group>"; };
-		21E879191CEA6CFE0046ACE2 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
-		21E8791A1CEA6CFE0046ACE2 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
-		21E8791B1CEA6CFE0046ACE2 /* DiskCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
-		21E8791C1CEA6CFE0046ACE2 /* MemoryCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryCache.swift; sourceTree = "<group>"; };
-		21E8791D1CEA6CFE0046ACE2 /* MultiCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiCache.swift; sourceTree = "<group>"; };
 		21E8791F1CEA6CFE0046ACE2 /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
 		21E879201CEA6CFE0046ACE2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,15 +105,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		21392818248806710009AFBF /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				21392819248806710009AFBF /* MemoryCache.swift */,
+				2139281A248806710009AFBF /* Box.swift */,
+				2139281B248806710009AFBF /* DiskCache.swift */,
+				2139281C248806710009AFBF /* Cache.swift */,
+				2139281D248806710009AFBF /* MultiCache.swift */,
+				2139281E248806710009AFBF /* AnyCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		21E879171CEA6CFE0046ACE2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				21E8791A1CEA6CFE0046ACE2 /* Cache.swift */,
-				21E8791C1CEA6CFE0046ACE2 /* MemoryCache.swift */,
-				21E8791B1CEA6CFE0046ACE2 /* DiskCache.swift */,
-				21E8791D1CEA6CFE0046ACE2 /* MultiCache.swift */,
-				21E879181CEA6CFE0046ACE2 /* AnyCache.swift */,
-				21E879191CEA6CFE0046ACE2 /* Box.swift */,
+				21392818248806710009AFBF /* Cache */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -325,12 +333,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21E879211CEA6CFE0046ACE2 /* AnyCache.swift in Sources */,
-				21E879251CEA6CFE0046ACE2 /* MemoryCache.swift in Sources */,
-				21E879261CEA6CFE0046ACE2 /* MultiCache.swift in Sources */,
-				21E879241CEA6CFE0046ACE2 /* DiskCache.swift in Sources */,
-				21E879231CEA6CFE0046ACE2 /* Cache.swift in Sources */,
-				21E879221CEA6CFE0046ACE2 /* Box.swift in Sources */,
+				2139281F248806710009AFBF /* MemoryCache.swift in Sources */,
+				21392823248806710009AFBF /* Box.swift in Sources */,
+				2139282B248806710009AFBF /* Cache.swift in Sources */,
+				21392833248806710009AFBF /* AnyCache.swift in Sources */,
+				21392827248806710009AFBF /* DiskCache.swift in Sources */,
+				2139282F248806710009AFBF /* MultiCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,12 +346,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				215DB4FE1DC37A2C00034124 /* Cache.swift in Sources */,
-				215DB4FF1DC37A2C00034124 /* MemoryCache.swift in Sources */,
-				215DB5011DC37A2C00034124 /* MultiCache.swift in Sources */,
-				215DB5031DC37A2C00034124 /* Box.swift in Sources */,
-				215DB5021DC37A2C00034124 /* AnyCache.swift in Sources */,
-				215DB5001DC37A2C00034124 /* DiskCache.swift in Sources */,
+				21392821248806710009AFBF /* MemoryCache.swift in Sources */,
+				21392825248806710009AFBF /* Box.swift in Sources */,
+				2139282D248806710009AFBF /* Cache.swift in Sources */,
+				21392835248806710009AFBF /* AnyCache.swift in Sources */,
+				21392829248806710009AFBF /* DiskCache.swift in Sources */,
+				21392831248806710009AFBF /* MultiCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,12 +359,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				215DB4F81DC37A2C00034124 /* Cache.swift in Sources */,
-				215DB4F91DC37A2C00034124 /* MemoryCache.swift in Sources */,
-				215DB4FB1DC37A2C00034124 /* MultiCache.swift in Sources */,
-				215DB4FD1DC37A2C00034124 /* Box.swift in Sources */,
-				215DB4FC1DC37A2C00034124 /* AnyCache.swift in Sources */,
-				215DB4FA1DC37A2C00034124 /* DiskCache.swift in Sources */,
+				21392822248806710009AFBF /* MemoryCache.swift in Sources */,
+				21392826248806710009AFBF /* Box.swift in Sources */,
+				2139282E248806710009AFBF /* Cache.swift in Sources */,
+				21392836248806710009AFBF /* AnyCache.swift in Sources */,
+				2139282A248806710009AFBF /* DiskCache.swift in Sources */,
+				21392832248806710009AFBF /* MultiCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,12 +372,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21B5054B1CFF9E7F0067FB9A /* Cache.swift in Sources */,
-				21B5054C1CFF9E7F0067FB9A /* MemoryCache.swift in Sources */,
-				21B5054E1CFF9E7F0067FB9A /* MultiCache.swift in Sources */,
-				21B505501CFF9E7F0067FB9A /* Box.swift in Sources */,
-				21B5054F1CFF9E7F0067FB9A /* AnyCache.swift in Sources */,
-				21B5054D1CFF9E7F0067FB9A /* DiskCache.swift in Sources */,
+				21392820248806710009AFBF /* MemoryCache.swift in Sources */,
+				21392824248806710009AFBF /* Box.swift in Sources */,
+				2139282C248806710009AFBF /* Cache.swift in Sources */,
+				21392834248806710009AFBF /* AnyCache.swift in Sources */,
+				21392828248806710009AFBF /* DiskCache.swift in Sources */,
+				21392830248806710009AFBF /* MultiCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
